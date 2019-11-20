@@ -39,7 +39,7 @@ for i in range(0, detections.shape[2]):
 		(startX, startY, endX, endY) = box.astype("int")
 		# nếu độ chính xác cao hơn ngưỡng accuracy ở input -> vẽ box dectection output
 		text = "{:.2f}%".format(confidence * 100)
-		# đưa ra độ chính xác bằng cv2.text
+		# đưa ra độ chính xác bằng opencv
 		y = startY - 10 if startY - 10 > 10 else startY + 10
 		# nếu hình ảnh bị mất một phần khuôn mặt! đẩy vị trí của text 10 đơn vị 
 		cv2.rectangle(image, (startX, startY), (endX, endY), (0, 0, 255), 2)
